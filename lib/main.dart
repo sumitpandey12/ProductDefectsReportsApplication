@@ -107,6 +107,19 @@ class _MyHomePageState extends State<MyHomePage> {
                     data: jsonData,
                     onTap: (defect) {
                       filterData(defect);
+                                            if (isPhone(context)) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Scaffold(
+                                appBar: AppBar(
+                                  title: Text(defect),
+                                  backgroundColor: Colors.orange,
+                                ),
+                                body: AnotherBoxTable(model: filtedData),
+                              ),
+                            ));
+                      }
                     },
                     onDoubleTap: (defect) {
                       filterData("");
