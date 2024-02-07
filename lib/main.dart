@@ -107,6 +107,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     data: jsonData,
                     onTap: (defect) {
                       filterData(defect);
+                    },
+                    onDoubleTap: (defect) {
+                      filterData("");
                       if (isPhone(context)) {
                         Navigator.push(
                             context,
@@ -120,9 +123,6 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ));
                       }
-                    },
-                    onDoubleTap: (defect) {
-                      filterData("");
                     },
                   ))
                 : Expanded(
